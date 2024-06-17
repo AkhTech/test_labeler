@@ -1,0 +1,26 @@
+name: Validate PR
+on:
+  - pull_request_target
+jobs:
+  pr_labeler:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+      - name: PR Codeowner Autolabel
+        id: pr-codeowner-autolabel
+        uses: mdzhang/pr-codeowner-autolabel@latest
+        with:
+          # default is CODEOWNERS
+          file-path: .github/CODEOWNERS
+          repo-token: ${{ secrets.GH_TOKEN }}
+          labels-to-owners: |
+            {
+              "team1": "@akhtech/team1",
+              "team2": "@akhtech/team2",
+              "team3": "@akhtech/team3"
+            }
