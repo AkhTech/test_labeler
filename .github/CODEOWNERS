@@ -1,0 +1,6 @@
+/folder1/ @AkhTech/team1
+/folder2/ @AkhTech/team2
+/folder3/ @AkhTech/team3
+/folder4/ @AkhTech/team1 @AkhTech/team2 @AkhTech/team3
+/folder5/ @AkhTech/team1 @AkhTech/team3
+/folder6/ @AkhTech/team3 @AkhTech/team2
